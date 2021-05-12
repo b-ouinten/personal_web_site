@@ -1,3 +1,4 @@
+/* Banner */
 .banner {
   position: relative;
 }
@@ -21,7 +22,7 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .rem-font {
+  .fluid-font-size {
     font-size: 0.9rem;
   }
 }
@@ -36,4 +37,14 @@
   .rem-font {
     font-size: 0.4rem;
   }
+}
+
+/* Projects filter */
+div > .checked {
+  border: medium solid #0095d2 !important;
+}
+
+.fit-img {
+  max-width: 100%;
+  max-height: 100%;
 }

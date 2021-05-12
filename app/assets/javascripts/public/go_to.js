@@ -3,11 +3,10 @@ $(document).ready(() => {
 
   projectsBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('Hello !');
-    scrollTo();
+    scrollTo($('#projects').offset().top);
   })  
 
-  function scrollTo() {
-    $('html, body').animate({ scrollTop: $('#test').offset().top }, 100);
+  let scrollTo = (position) => {
+    $('html, body').animate({ scrollTop: position }, 100);
   }
 })

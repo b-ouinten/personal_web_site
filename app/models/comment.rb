@@ -1,3 +1,4 @@
 class Comment < ApplicationRecord
-  belongs_to :category
+  # Assoiciations
+  belongs_to :comment_category
 end
