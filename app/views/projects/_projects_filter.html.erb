@@ -1,10 +1,13 @@
-<h5 class="text-center mb-4 fluid-font-size">Select a friends to show the fights in which they participated!</h5>
-<div class="row justify-content-center">
-  <% @tags.each do |tag| %>
-    <div class="col-sm-2 col-md-1 mb-sm-5 text-center">
-      <div id="<%= tag.id %>" class="img-check card border-success border-3">
-        <%= image_tag "tags_pngs/#{tag.code}.png", class: 'card-img-top img-thumbnail img-fluid fit-img', alt: "#{tag.title}" %>
+<div id="filter">
+  <h5 class="text-center mb-4 fluid-font-size">Select a Pokétechnos to show the fights in which they have helped me!</h5>
+  <div class="row justify-content-center">
+    <% @tags.each do |tag| %>
+      <div class="col-sm-2 col-lg-1 mb-sm-5 text-center">
+        <div id="<%= tag.id %>" class="img-check card border-success border-3">
+          <%= image_tag "tags_pngs/#{tag.code}.png", class: 'card-img-top img-thumbnail img-fluid', alt: "#{tag.title}" %>
+          <div class="card-footer p-0 small-text"><%= "Force #{tag.strength}/10" %></div>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

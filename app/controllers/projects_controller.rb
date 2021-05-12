@@ -1,8 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @tags = Tag.all
-    puts '-' * 60
-    puts params
-    puts '-' * 60
+    @tags = Tag.order(:order)
+    @projects = Project.all
   end
 end

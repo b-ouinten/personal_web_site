@@ -1,10 +1,10 @@
 class Tag < ApplicationRecord
-  # Callbacks
-  before_save :set_code
-  
   # Associations
   has_many :taggings
   has_many :projects, through: :taggings
+
+  # Callbacks
+  before_save :set_code
 
   private
   

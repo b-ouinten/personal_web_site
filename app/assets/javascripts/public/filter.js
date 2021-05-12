@@ -11,10 +11,9 @@ $(document).ready(() => {
       data: { tags_ids: tagsIds },
       success: (result) => {
         console.log(result);
-        // $('div.my-city').remove();        
-        // let myCity = $(result).filter('div.my-city');
-        // $('div#filter').after(myCity);
-        // $('div.no-proposal').remove();
+        $('div#projects_result').remove();        
+        let projectsResult = $(result).filter('div#projects_result');
+        $('div#filter').after(projectsResult);
       },
       error: (error) => {
         console.log(error);
