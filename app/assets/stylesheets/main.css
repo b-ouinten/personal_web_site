@@ -48,6 +48,10 @@ div > .checked {
   cursor: pointer;
 }
 
+.img-check:hover {
+  opacity: 0.5;
+}
+
 .small-text {
   font-size: x-small;
 }
