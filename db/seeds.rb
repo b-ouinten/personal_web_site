@@ -64,7 +64,7 @@ le_moulin = create_prject(
 )
 ze_kitten_project = create_prject(
   'Ze Kitten Project', 
-  'This site offers pictures of kittens for sale.',
+  'This website offers pictures of kittens for sale.',
   4,
   21,
   4,
