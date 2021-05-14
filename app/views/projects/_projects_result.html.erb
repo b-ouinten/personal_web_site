@@ -8,9 +8,9 @@
             <div>
               <h5 class="font-weight-bold"><%= project.title %></h5>
               <p class="card-text desciption mb-1"><%= project.description %></p>
-              <div class="row">
+              <div class="row px-2">
                 <% project.tags.order(:order).each do |tag| %>
-                  <div class="col-auto">
+                  <div class="col-auto px-1">
                     <%= image_tag "tags_pngs/#{tag.code}.png", size: '20x20' %>
                   </div>
                 <% end %>
