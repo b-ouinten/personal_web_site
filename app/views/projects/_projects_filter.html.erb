@@ -2,10 +2,12 @@
   <h5 class="text-center mb-4 fluid-font-size">Select a Pokétechnos to show the fights in which they have helped me!</h5>
   <div class="row justify-content-center">
     <% @tags.each do |tag| %>
-      <div class="col-sm-2 col-lg-1 mb-sm-5 text-center">
+      <div class="col-sm-2 col-lg-1 mb-3 mb-lg-5 text-center">
         <div id="<%= tag.id %>" class="img-check card border-success border-3">
           <%= image_tag "tags_pngs/#{tag.code}.png", class: 'card-img-top img-thumbnail img-fluid', alt: "#{tag.title}" %>
-          <div class="card-footer small-text p-0"><%= "Force : #{tag.strength}/10" %></div>
+          <div class="card-footer small-text p-0">
+            <%= "Force : #{tag.strength}/10" %>
+          </div>
         </div>
       </div>
     <% end %>

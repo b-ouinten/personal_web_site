@@ -40,7 +40,7 @@
 }
 
 /* Projects filter */
-div > .checked {
+#filter .checked {
   border: medium solid #0095d2 !important;
 }
 
@@ -52,6 +52,26 @@ div > .checked {
   opacity: 0.5;
 }
 
-.small-text {
+div#filter .card-footer {
   font-size: 0.7em;
+}
+
+/* Projects result */
+.card-img {
+  border-bottom: thin solid #dfdfdf;
+}
+#projects_result .card-body .card-text {
+  font-size: 0.9em;
+}
+
+#projects_result .card-footer {
+  font-size: 0.75em !important;
+}
+
+#projects_result a {
+  color: #005a7e !important;
+}
+
+#projects_result a:hover {
+  opacity: 0.8;
 }

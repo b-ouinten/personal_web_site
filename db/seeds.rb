@@ -36,6 +36,7 @@ css = Tag.create(title: 'CSS', order: 6, strength: 5)
 bootstrap = Tag.create(title: 'Bootstrap', order: 7, strength: 6)
 pgsql = Tag.create(title: 'PostgreSQL', order: 8, strength: 5)
 git = Tag.create(title: 'git', order: 9, strength: 5)
+puts 'Tags created!'
 
 # Create projects
 agora = create_prject(
@@ -80,7 +81,7 @@ dwarfurler = create_prject(
 )
 french_embassies = create_prject(
   'French embassies',
-  'This website provides a french embassies directory',
+  'This website provides a french embassies directory.',
   3, 
   4,
   0,
@@ -90,7 +91,7 @@ french_embassies = create_prject(
 )
 ai_morpion = create_prject(
   'Morpion with AI',
-  'This is a morpion AI-based. The AI was implimented using the concept of trees in algorithms.',
+  'This is a morpion AI-based. The AI was implemented using the concept of trees in algorithms.',
   5, 
   4,
   0,
@@ -98,3 +99,4 @@ ai_morpion = create_prject(
   'https://github.com/b-ouinten/Morpion_with_AI',
   [javascript, css, git]
 )
+puts 'Projects created!'
