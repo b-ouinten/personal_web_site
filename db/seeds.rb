@@ -6,13 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-def create_prject(title, description, complexity, duration, devs, link = '', git_repo = '', tags = [])
+def create_prject(title, description, complexity, duration, devs, my_role, link = '', git_repo = '', tags = [])
   Client.create(name: title).projects.create(
     title: title,
     description: description,
     complexity: complexity, 
     duration: duration,
     devs: devs,
+    my_role: my_role,
     link: link,
     git_repo: git_repo,
     tags: tags
@@ -45,6 +46,7 @@ agora = create_prject(
   5, 
   23,
   4,
+  'Full-Stack developer.',
   'https://agora-prd.herokuapp.com/',
   'https://github.com/MathieuBobin/agora',
   [ruby, rails, javascript, html, css, bootstrap, pgsql, git]
@@ -55,6 +57,7 @@ le_moulin = create_prject(
   5,
   18,
   3,
+  'Full-Stack developer.',
   'https://lemoulin.herokuapp.com/',
   'https://github.com/ClementPain/LeMoulin',
   [rails, javascript, react, html, bootstrap, pgsql, git]
@@ -65,6 +68,7 @@ ze_kitten_project = create_prject(
   4,
   21,
   4,
+  'Full-Stack developer.',
   'https://ze-kitten-project.herokuapp.com/',
   'https://github.com/MathieuBobin/Kitty-Project-V2',
   [ruby, rails, html, bootstrap, pgsql, git]
@@ -75,6 +79,7 @@ dwarfurler = create_prject(
   3, 
   7,
   0,
+  'Full-Stack developer.',
   'https://dwarfurler.herokuapp.com/',
   'https://github.com/b-ouinten/DwarfURLer_A_URL_shortener',
   [ruby, rails, bootstrap, pgsql, git]
@@ -85,6 +90,7 @@ french_embassies = create_prject(
   3, 
   4,
   0,
+  'Full-Stack developer.',
   'https://french-embassies-app.herokuapp.com/',
   'https://github.com/b-ouinten/French_embassies',
   [ruby, rails, bootstrap, pgsql, git]
@@ -95,6 +101,7 @@ ai_morpion = create_prject(
   5, 
   4,
   0,
+  'JavaScript Developer.',
   'https://b-ouinten.github.io/Morpion_with_AI/',
   'https://github.com/b-ouinten/Morpion_with_AI',
   [javascript, css, git]

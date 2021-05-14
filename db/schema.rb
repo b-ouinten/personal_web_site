@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2021_05_11_172347) do
     t.integer "complexity"
     t.integer "duration"
     t.integer "devs"
+    t.string "my_role"
     t.string "link"
     t.string "git_repo"
     t.bigint "client_id"

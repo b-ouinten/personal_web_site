@@ -7,6 +7,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.integer :complexity
       t.integer :duration
       t.integer :devs
+      t.string :my_role
       t.string :link
       t.string :git_repo
 

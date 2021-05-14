@@ -1,4 +1,4 @@
-/* Banner */
+/* Banner partial */
 .banner {
   position: relative;
 }
@@ -39,7 +39,7 @@
   }
 }
 
-/* Projects filter */
+/* Projects filter partial */
 #filter .checked {
   border: medium solid #0095d2 !important;
 }
@@ -56,7 +56,7 @@ div#filter .card-footer {
   font-size: 0.7em;
 }
 
-/* Projects result */
+/* Projects result partial */
 .card-img {
   border-bottom: thin solid #dfdfdf;
 }
