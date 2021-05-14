@@ -1,4 +1,4 @@
-/* Banner partial */
+/* banner partial */
 .banner {
   position: relative;
 }
@@ -39,7 +39,7 @@
   }
 }
 
-/* Projects filter partial */
+/* projects_filter partial */
 #filter .checked {
   border: medium solid #0095d2 !important;
 }
@@ -56,7 +56,7 @@ div#filter .card-footer {
   font-size: 0.7em;
 }
 
-/* Projects result partial */
+/* projects_result partial */
 .card-img {
   border-bottom: thin solid #dfdfdf;
 }
@@ -74,4 +74,18 @@ div#filter .card-footer {
 
 #projects_result a:hover {
   opacity: 0.8;
+}
+
+/* scroll_to_top_btn partial*/
+#scroll-to-top-btn {
+  display: none; 
+  position: fixed;
+  bottom: 62px;
+  right: 10px;
+  z-index: 99;
+  width: 40px;
+  height: 40px;
+  padding: 2px;
+  margin: 2px;;
+  border-radius: 50%;
 }
