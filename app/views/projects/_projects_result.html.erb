@@ -1,4 +1,21 @@
 <div id="projects_result">
+  <% if not @selected_tags.nil? %>
+    <div class="row justify-content-center align-items-center mb-4">
+      <div class="col-auto px-1">
+        <h5 class="mb-0">Below the fights in which</h5>
+      </div>
+      <% @selected_tags.each do |tag| %>
+        <div class="col-auto px-1">
+          <%= image_tag "tags_pngs/#{tag.code}.png", size: '25x25' %>          
+        </div>
+      <% end %>
+      <div class="col-auto px-1">
+        <h5 class="mb-0">helped me!</h5>
+      </div>
+    </div>
+  <% else %>
+    <h5 class="text-center mb-4">These are all the fights!</h5>
+  <% end %>
   <div class="row">
     <% @projects.each do |project| %>
       <div class="col-lg-6 mb-3">
