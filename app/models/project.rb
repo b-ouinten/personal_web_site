@@ -12,8 +12,8 @@ class Project < ApplicationRecord
     phrase = []
     weeks = self.duration / 7
     days = self.duration % 7
-    phrase << "#{weeks} weeks" if weeks > 0
-    phrase << "#{days} days"  if days > 0
+    phrase << "#{weeks} #{weeks > 1 ? 'weeks' : 'week'}" if weeks > 0
+    phrase << "#{days} #{days > 1 ? 'days' : 'day'}"  if days > 0
     "#{phrase.join(' and ')}."
   end
 
