@@ -2,7 +2,7 @@
   <h5 class="text-center mb-4 fluid-font-size">Select a Pokétechnos to show the fights in which they have helped me!</h5>
   <div class="row justify-content-center">
     <% @tags.each do |tag| %>
-      <div class="col-auto mb-3 mb-lg-5">
+      <div class="col-auto mb-5">
         <%= image_tag "tags_pngs/#{tag.code}.png", size: '100x100', id: tag.id, class: 'img-check img-thumbnail img-fluid border-success border-2', alt: "#{tag.title}" %>
         <div class="card-footer text-center p-0">
           <%= "Strength : #{tag.strength}/10" %>
