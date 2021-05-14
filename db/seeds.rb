@@ -6,11 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-def create_prject(title, complexity, duration, link = '', git_repo = '', tags = [])
+def create_prject(title, description, complexity, duration, devs, link = '', git_repo = '', tags = [])
   Client.create(name: title).projects.create(
-    title: title, 
+    title: title,
+    description: description,
     complexity: complexity, 
     duration: duration,
+    devs: devs,
     link: link,
     git_repo: git_repo,
     tags: tags
@@ -37,49 +39,61 @@ git = Tag.create(title: 'git', order: 9, strength: 5)
 
 # Create projects
 agora = create_prject(
-  'Agora', 
+  'Agora',
+  'This citizen discussion platform aims to give French citizens the means to propose and discuss local citizen ideas and to get involved in the improvement of their cities.',
   5, 
   23,
+  4,
   'https://agora-prd.herokuapp.com/',
   'https://github.com/MathieuBobin/agora',
   [ruby, rails, javascript, html, css, bootstrap, pgsql, git]
 )
 le_moulin = create_prject(
-  'Le Moulin', 
-  5, 
+  'Le Moulin',
+  'The objective of this Click and Collect type platform was to allow small traders to make themselves known and citizens to easily find their needs while encouraging local commerce.',
+  5,
   18,
+  3,
   'https://lemoulin.herokuapp.com/',
   'https://github.com/ClementPain/LeMoulin',
   [rails, javascript, react, html, bootstrap, pgsql, git]
 )
 ze_kitten_project = create_prject(
   'Ze Kitten Project', 
-  4, 
-  35,
+  'This site offers pictures of kittens for sale.',
+  4,
+  21,
+  4,
   'https://ze-kitten-project.herokuapp.com/',
   'https://github.com/MathieuBobin/Kitty-Project-V2',
   [ruby, rails, html, bootstrap, pgsql, git]
 )
 dwarfurler = create_prject(
-  'dwarfURLer', 
+  'dwarfURLer',
+  'This website provides a URL shortener that can create a DwarfURL from a giant URL, so you can share cute URLs with the rest of the world instead of URLs that go a mile!',
   3, 
   7,
+  0,
   'https://dwarfurler.herokuapp.com/',
   'https://github.com/b-ouinten/DwarfURLer_A_URL_shortener',
   [ruby, rails, bootstrap, pgsql, git]
 )
 french_embassies = create_prject(
-  'French embassies', 
+  'French embassies',
+  'This website provides a french embassies directory',
   3, 
   4,
+  0,
   'https://french-embassies-app.herokuapp.com/',
   'https://github.com/b-ouinten/French_embassies',
   [ruby, rails, bootstrap, pgsql, git]
 )
 ai_morpion = create_prject(
-  'Morpion with AI', 
+  'Morpion with AI',
+  'This is a morpion AI-based. The AI was implimented using the concept of trees in algorithms.',
   5, 
   4,
+  0,
   'https://b-ouinten.github.io/Morpion_with_AI/',
   'https://github.com/b-ouinten/Morpion_with_AI',
   [javascript, css, git]

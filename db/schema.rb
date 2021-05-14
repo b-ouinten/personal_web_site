@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_13_044739) do
+ActiveRecord::Schema.define(version: 2021_05_14_060454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_05_13_044739) do
     t.text "description"
     t.string "link"
     t.string "git_repo"
+    t.integer "devs"
     t.index ["client_id"], name: "index_projects_on_client_id"
   end
 
