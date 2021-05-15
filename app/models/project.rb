@@ -16,9 +16,21 @@ class Project < ApplicationRecord
     phrase << "#{days} #{days > 1 ? 'days' : 'day'}"  if days > 0
     "#{phrase.join(' and ')}."
   end
-
+  
   def team
     "me#{self.devs > 0 ? " and #{self.devs} devs." : '.'}"
+  end
+
+  # gems setups
+  extend FriendlyId
+  friendly_id :code, use: :slugged
+
+  def normalize_friendly_id(string)
+    string
+  end
+
+  def should_generate_new_friendly_id?
+    new_record?
   end
 
   private
