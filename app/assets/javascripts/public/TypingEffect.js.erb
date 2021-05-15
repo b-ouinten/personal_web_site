@@ -8,6 +8,10 @@ $(document).ready(async function(){
       {text: "new", color: "#4f93d9"},
       {text: "(", color: "#e9bc00"},
       {text: "'Wazo'", color: "#d58f74"},
+      {text: ", ", color: "white"},
+      {text: "'", color: "#d58f74"},
+      {image: `<img src=<%= asset_path('me') %> width="50" height="70">`},
+      {text: "'", color: "#d58f74"},
       {text: ")", color: "#e9bc00"}
     ],
     [
@@ -64,12 +68,18 @@ $(document).ready(async function(){
     for(let i in codeLine) {
       let codeLinePortionId = `portion-${codeLineIndex}-${i}`;
       $(codeLineEleRef).append(`<span id="${codeLinePortionId}"></span>`)
-      let letters = codeLine[i].text.split("");
-      for (letter of letters) {
-        await waitForMs(delay);
-        $(`#${codeLinePortionId}`).append(letter);
-        $(`#${codeLinePortionId}`).css('color', codeLine[i].color);
-      };
+      let image = codeLine[i].image;
+      if (image) {
+        $(`#${codeLinePortionId}`).append(image);
+      }
+      else {
+        let letters = codeLine[i].text.split("");
+        for (letter of letters) {
+          await waitForMs(delay);
+          $(`#${codeLinePortionId}`).append(letter);
+          $(`#${codeLinePortionId}`).css('color', codeLine[i].color);
+        };
+      }
     }
     
     return;
