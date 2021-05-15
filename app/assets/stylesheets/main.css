@@ -64,9 +64,14 @@ div#filter .card-footer {
   font-size: 0.9em;
 }
 
-
 #projects_result .card-footer {
   font-size: 0.75em !important;
+}
+
+@media only screen and (max-width: 500px) {
+  #projects_result .card-footer {
+    font-size: 0.6em !important;
+  }
 }
 
 #projects_result a {
@@ -77,6 +82,24 @@ div#filter .card-footer {
   opacity: 0.8;
 }
 
+@media only screen and (max-width: 800px) {
+  h5 {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  h5 {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  h5 {
+    font-size: 0.7rem !important;
+  }
+}
+
 /* about_me partial */
 .typing-container {
   font-family: 'Ubuntu Mono', monospace;
@@ -84,7 +107,7 @@ div#filter .card-footer {
   display: flex;
   justify-content: start;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.2em;
 }
 .cursor {
   display: inline-block;
@@ -99,6 +122,24 @@ div#filter .card-footer {
   40% {opacity: 1;}
   60% {opacity: 0;}
   100% {opacity: 0;}
+}
+
+@media only screen and (max-width: 800px) {
+  .typing-container {
+    font-size: 0.9em; 
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .typing-container {
+    font-size: 0.75em;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .typing-container {
+    font-size: 0.65em;
+  }
 }
 
 .cursor { 

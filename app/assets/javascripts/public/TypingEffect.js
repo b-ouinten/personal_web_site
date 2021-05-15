@@ -23,11 +23,13 @@ $(document).ready(() => {
       {text: "forces", color: "#d9e3a8"},
       {text: " = ", color: "white"},
       {text: "[", color: "#00c8ff"},
+      {text: "'Ambition'", color: "#d58f74"},
+      {text: ", ", color: "white"},
+      {text: "'Autonomy'", color: "#d58f74"},
+      {text: ", ", color: "white"},
       {text: "'Perseverance'", color: "#d58f74"},
       {text: ", ", color: "white"},
       {text: "'Perfection'", color: "#d58f74"},
-      {text: ", ", color: "white"},
-      {text: "'Desire to learn more'", color: "#d58f74"},
       {text: "]", color: "#00c8ff"}
     ],
     [
@@ -40,7 +42,7 @@ $(document).ready(() => {
   typeCodeBlock(codeLines);
 
   async function typeCodeBlock(codeLines) {
-    for(i in codeLines) {
+    for(let i in codeLines) {
       $('#code-lines').append(`
         <div class="typing-container">
           <span id="code-line-${i}"></span>
@@ -49,13 +51,13 @@ $(document).ready(() => {
       `)
       await typeCodeLine(codeLines[i], `#code-line-${i}`);
       await waitForMs(500);
-      $('#cursor').remove();
+      if (i < codeLines.length - 1) $('#cursor').remove();
     }
   }
 
   async function typeCodeLine(codeLine, codeLineEleRef, delay = 100) {
     let codeLineIndex = parseInt(codeLineEleRef.split('').reverse().join(''));
-    for(i in codeLine) {
+    for(let i in codeLine) {
       let codeLinePortionId = `code-line-portion-${codeLineIndex}${i}`;
       $(codeLineEleRef).append(`<span id="${codeLinePortionId}"></span>`)
       let letters = codeLine[i].text.split("");
@@ -67,16 +69,6 @@ $(document).ready(() => {
     }
     
     return;
-  }
-  
-  async function deleteCodeLine(codeLineEleRef) {
-    const codeLine = $(codeLineEleRef).html();
-    const letters = codeLine.split("");
-    while(letters.length > 0) {
-      await waitForMs(100);
-      letters.pop();
-      $(codeLineEleRef).html(letters.join(""));
-    }
   }
   
   function waitForMs(ms) {
