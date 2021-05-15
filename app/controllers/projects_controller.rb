@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_action :get_project, only: [:show_rendering, :show_repo]
+  
   def index
     tag_ids = params[:tag_ids]
     if not tag_ids.nil?     # AJAX request, see filter.js file
@@ -9,5 +11,19 @@ class ProjectsController < ApplicationController
     end
 
     @tags = Tag.order(:order)
+  end
+
+  def show_rendering
+    redirect_to @project.link
+  end
+  
+  def show_repo
+    redirect_to @project.git_repo
+  end
+
+  private
+  
+  def get_project
+    @project = Project.find(params[:id])
   end
 end
