@@ -64,6 +64,7 @@ div#filter .card-footer {
   font-size: 0.9em;
 }
 
+
 #projects_result .card-footer {
   font-size: 0.75em !important;
 }
@@ -76,11 +77,39 @@ div#filter .card-footer {
   opacity: 0.8;
 }
 
+/* about_me partial */
+.typing-container {
+  font-family: 'Ubuntu Mono', monospace;
+  color: white;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 25px;
+  background-color: white;
+  margin-left: 1px;
+}
+
+@keyframes blink {
+  0% {opacity: 1;}
+  40% {opacity: 1;}
+  60% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
+.cursor { 
+  animation: blink .6s linear infinite alternate;
+}
+
 /* scroll_to_top_btn partial*/
 #scroll-to-top-btn {
   display: none; 
   position: fixed;
-  bottom: 62px;
+  bottom: 75px;
   right: 10px;
   z-index: 99;
   width: 40px;
