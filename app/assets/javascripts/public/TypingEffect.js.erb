@@ -63,15 +63,16 @@ $(document).ready(async function(){
 
   while (true) {
     await typeCodeBlock(introduction, 'introduction');
-    await waitForMs(3000);
-    $('#introduction').empty();
+    await waitForMs(1500);
     await typeCodeBlock(webPresence, 'web-presence');
     await waitForMs(7000);
+    $('#introduction').empty();
     $('#web-presence').empty();
   }
   
   async function typeCodeBlock(codeLines, parentTagRef) {
     for(let i in codeLines) {
+      if ($('#cursor')) $('#cursor').remove();
       let id = `${parentTagRef}-${i}`;
       $(`#${parentTagRef}`).append(`
         <div class="typing-container">
@@ -81,7 +82,6 @@ $(document).ready(async function(){
       `)
       await typeCodeLine(codeLines[i], `${id}`);
       await waitForMs(900);
-      if (i < codeLines.length - 1) $('#cursor').remove();
     }
   }
 
