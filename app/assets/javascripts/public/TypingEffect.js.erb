@@ -68,18 +68,17 @@ $(document).ready(async function(){
     for(let i in codeLine) {
       let codeLinePortionId = `portion-${codeLineIndex}-${i}`;
       $(codeLineEleRef).append(`<span id="${codeLinePortionId}"></span>`)
-      let image = codeLine[i].image;
-      if (image) {
-        $(`#${codeLinePortionId}`).append(image);
-      }
-      else {
-        let letters = codeLine[i].text.split("");
-        for (letter of letters) {
-          await waitForMs(delay);
-          $(`#${codeLinePortionId}`).append(letter);
-          $(`#${codeLinePortionId}`).css('color', codeLine[i].color);
-        };
-      }
+      let text = codeLine[i].text || '';
+      let image = codeLine[i].image || null;
+      let color = codeLine[i].color || '';
+
+      $(`#${codeLinePortionId}`).append(image);
+      let letters = text.split("");
+      for (letter of letters) {
+        await waitForMs(delay);
+        $(`#${codeLinePortionId}`).append(letter);
+        $(`#${codeLinePortionId}`).css('color', codeLine[i].color);
+      };
     }
     
     return;
