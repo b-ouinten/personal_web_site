@@ -1,5 +1,5 @@
 $(document).ready(async function(){
-  const codeLines = [
+  const introduction = [
     [
       {text: "me", color: "#92daff"}, 
       {text: " = ", color: "white"}, 
@@ -10,7 +10,7 @@ $(document).ready(async function(){
       {text: "'Wazo'", color: "#d58f74"},
       {text: ", ", color: "white"},
       {text: "'", color: "#d58f74"},
-      {image: `<img src=<%= asset_path('me') %> width="45" height="55">`},
+      {image: `<img src=<%= asset_path 'me' %> width="45" height="55">`},
       {text: "'", color: "#d58f74"},
       {text: ")", color: "#e9bc00"}
     ],
@@ -43,34 +43,55 @@ $(document).ready(async function(){
     ]
   ]
 
+  const webPresence = [
+    [
+      {text: "me", color: "#92daff"},
+      {text: ".", color: "white"},
+      {text: "web_presence", color: "#d9e3a8"},
+      {text: " = ", color: "white"},
+      {text: "[", color: "#00c8ff"},
+      {text: "'", color: "#d58f74"},
+      {image: `<a href="https://github.com/b-ouinten"><img src=<%= asset_path 'web_presence/github' %> width="20" height="20"></a>`},
+      {text: "'", color: "#d58f74"},
+      {text: ", ", color: "white"},
+      {text: "'", color: "#d58f74"},
+      {image: `<a href="https://www.linkedin.com/in/b-ouinten/"><img src=<%= asset_path 'web_presence/linkedin' %> width="20" height="20"></a>`},
+      {text: "'", color: "#d58f74"},
+      {text: "]", color: "#00c8ff"}
+    ]
+  ]
+
   while (true) {
-    await typeCodeBlock(codeLines);
-    await waitForMs(5000);
-    $('#code-lines').empty();
+    await typeCodeBlock(introduction, 'introduction');
+    await waitForMs(3000);
+    $('#introduction').empty();
+    await typeCodeBlock(webPresence, 'web-presence');
+    await waitForMs(7000);
+    $('#web-presence').empty();
   }
   
-  async function typeCodeBlock(codeLines) {
+  async function typeCodeBlock(codeLines, parentTagRef) {
     for(let i in codeLines) {
-      $('#code-lines').append(`
+      let id = `${parentTagRef}-${i}`;
+      $(`#${parentTagRef}`).append(`
         <div class="typing-container">
-          <span id="code-line-${i}"></span>
+          <span id="${id}"></span>
           <span id="cursor" class="cursor"></span>
         </div>
       `)
-      await typeCodeLine(codeLines[i], `#code-line-${i}`);
+      await typeCodeLine(codeLines[i], `${id}`);
       await waitForMs(900);
       if (i < codeLines.length - 1) $('#cursor').remove();
     }
   }
 
-  async function typeCodeLine(codeLine, codeLineEleRef, delay = 120) {
-    let codeLineIndex = parseInt(codeLineEleRef.split('').reverse().join(''));
+  async function typeCodeLine(codeLine, codeLineEleRef, delay = 100) {
     for(let i in codeLine) {
-      let codeLinePortionId = `portion-${codeLineIndex}-${i}`;
-      $(codeLineEleRef).append(`<span id="${codeLinePortionId}"></span>`)
+      let codeLinePortionId = `${codeLineEleRef}-portion-${i}`;
+      $(`#${codeLineEleRef}`).append(`<span id="${codeLinePortionId}"></span>`)
       let text = codeLine[i].text || '';
-      let image = codeLine[i].image || null;
       let color = codeLine[i].color || '';
+      let image = codeLine[i].image || null;
 
       $(`#${codeLinePortionId}`).append(image);
       let letters = text.split("");
