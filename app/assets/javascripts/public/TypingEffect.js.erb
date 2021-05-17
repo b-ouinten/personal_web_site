@@ -64,6 +64,7 @@ $(document).ready(async function(){
   while (true) {
     await typeCodeBlock(introduction, 'introduction');
     await waitForMs(1500);
+    $('#introduction').addClass('mb-3')
     await typeCodeBlock(webPresence, 'web-presence');
     await waitForMs(7000);
     $('#introduction').empty();
