@@ -109,6 +109,25 @@ div#filter .card-footer {
   align-items: center;
   font-size: 1.2em;
 }
+
+@media only screen and (max-width: 800px) {
+  .about-me-text {
+    font-size: 0.9rem; 
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .about-me-text {
+    font-size: 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .about-me-text {
+    font-size: 0.65rem;
+  }
+}
+
 .cursor {
   display: inline-block;
   width: 2px;
@@ -122,24 +141,6 @@ div#filter .card-footer {
   40% {opacity: 1;}
   60% {opacity: 0;}
   100% {opacity: 0;}
-}
-
-@media only screen and (max-width: 800px) {
-  .typing-container {
-    font-size: 0.9em; 
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .typing-container {
-    font-size: 0.75em;
-  }
-}
-
-@media only screen and (max-width: 530px) {
-  .typing-container {
-    font-size: 0.65em;
-  }
 }
 
 .cursor { 
