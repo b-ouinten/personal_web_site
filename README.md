@@ -1,4 +1,4 @@
-This my website, it is a dynamic website, i build it without template and it uses :
+This is my website, it is a dynamic website, i build it without template and it uses :
 - Ruby / Rails
 - JavaScript
 - PostgreSQL
