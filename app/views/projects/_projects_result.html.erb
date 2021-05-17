@@ -43,9 +43,9 @@
             </div>
           </div>
           <div class="card-footer alert-info d-flex justify-content-between align-items-center px-2 py-1 ">
-            <%= link_to 'View this conquered land', project_rendering_path(project), class: 'text-decoration-none' %>
+            <%= link_to 'View this conquered land', project_rendering_path(project), class: 'text-decoration-none', target: '_blank' %>
             <p class="card-text mb-0"><%= "Level : #{project.complexity}/10" %></p>
-            <%= link_to 'Watch fight', project_repo_path(project), class: 'text-decoration-none' %>
+            <%= link_to 'Watch fight', project_repo_path(project), class: 'text-decoration-none', target: '_blank' %>
           </div>
         </div>
       </div>      
