@@ -101,7 +101,7 @@ ai_morpion = create_prject(
   5, 
   4,
   0,
-  'JavaScript Developer.',
+  'JavaScript developer.',
   'https://b-ouinten.github.io/Morpion_with_AI/',
   'https://github.com/b-ouinten/Morpion_with_AI',
   [javascript, css, git]
