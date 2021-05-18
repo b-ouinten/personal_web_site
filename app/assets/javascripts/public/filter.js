@@ -10,13 +10,21 @@ $(document).ready(() => {
       dataType: 'html',
       data: { tag_ids: tagIds },
       success: (result) => {
-        $('div#projects_result').remove();        
-        let projectsResult = $(result).find('div#projects_result');
-        $('div#filter').after(projectsResult);
+        let currentProjectsResultSection = $('#projects_result');
+        let filter = $('#filter');
+        let newProjectsResultSection = $(result).find('#projects_result');
+
+        currentProjectsResultSection.remove();       
+        filter.after(newProjectsResultSection);
+        scrollTo($('#projects_result').offset().top);
       },
       error: (error) => {
         console.log(error);
       }
     });
   })
+
+  let scrollTo = (position) => {
+    $('html, body').animate({ scrollTop: position }, 100);
+  }
 })
