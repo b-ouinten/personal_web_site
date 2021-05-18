@@ -16,7 +16,7 @@ $(document).ready(() => {
 
         currentProjectsResultSection.remove();       
         filter.after(newProjectsResultSection);
-        scrollTo($('#projects_result').offset().top);
+        if (tagIds.length > 0) scrollTo($('#projects_result').offset().top);
       },
       error: (error) => {
         console.log(error);
