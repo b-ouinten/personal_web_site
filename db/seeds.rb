@@ -107,3 +107,10 @@ ai_morpion = create_prject(
   [javascript, css, git]
 )
 puts 'Projects created!'
+
+# Create comment categories
+CommentCategory.create(title: 'Very good')
+CommentCategory.create(title: 'Good')
+CommentCategory.create(title: 'Bad')
+
+puts 'Comment categories created!'

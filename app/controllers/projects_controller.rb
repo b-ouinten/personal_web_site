@@ -11,8 +11,10 @@ class ProjectsController < ApplicationController
     end
 
     @tags = Tag.order(:order)
+    
     @comment = Comment.new
-    @cmments_categries = CommentCategory.all
+    @comment_categories = CommentCategory.all
+    @comments = Comment.all
   end
 
   def show_rendering

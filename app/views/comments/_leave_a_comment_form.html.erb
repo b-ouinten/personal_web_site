@@ -1,0 +1,14 @@
+<div class="mb-5">
+  <%= form_for @comment do |f| %>
+    <div class="form-group mb-3">
+      <%= f.label :comment_category_id, 'Satisfaction level' %>
+      <%= f.collection_select :comment_category_id, @comment_categories, :id, :title %>
+    </div>
+    <div class="form-group mb-3">
+      <%= f.text_area :content, rows: 2 %>
+    </div>
+    <div>
+      <%= f.submit 'Send', class: "btn btn-sm btn-primary" %>
+    </div>
+  </div>
+<% end %>
