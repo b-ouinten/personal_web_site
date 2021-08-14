@@ -1,5 +1,9 @@
 <div id="comments-area" class="container-fluid py-3">
   <h5 class="text-center mb-4">Leave me a comment</h5>
-  <%= render 'comments/leave_a_comment_form' %>
-  <%= render 'comments/comments_list' %>
+  <div class="row">
+    <div class="offset-sm-1 col-sm-10 offset-md-2 col-md-8">
+      <%= render 'comments/leave_a_comment_form' %>
+      <%= render 'comments/comments_list' %>
+    </div>
+  </div>
 </div>
