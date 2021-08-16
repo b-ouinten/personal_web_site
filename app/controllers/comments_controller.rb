@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(permitted_comment_params)
 
     if @comment.save
-      flash[:success] = 'Thanks for your comment!'
+      flash[:success] = 'Thank you for your comment!'
     else
       flash[:alert] = @comment.err_messages
     end
