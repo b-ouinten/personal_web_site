@@ -1,0 +1,21 @@
+$(document).ready(() => {
+  let flash = document.getElementById('flash');
+  let commentForm = document.getElementById('comment-form');
+  let commentsList = document.getElementById('comments-list');
+
+  <% if @comment.valid? %>
+    <% if Comment.all.count == 1 %>
+      commentsList.innerHTML += `<h6 id="comments-list-title" class="mb-4">Others have left comments</h6>`;
+    <% end %>
+
+    commentsList.innerHTML += `<%= j render 'comments/comment', comment: @comment %>`;
+
+    document.getElementsByTagName('textarea')[0].value = "";
+    document.getElementsByTagName('select')[0].selectedIndex = 0;
+  <% end %>
+  
+  flash.remove();
+  commentForm.insertAdjacentHTML("afterbegin", "<%= j render 'layouts/flash' %>");
+  
+  <% flash.clear %>
+})

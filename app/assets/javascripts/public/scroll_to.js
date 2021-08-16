@@ -1,26 +1,23 @@
 $(document).ready(() => {
   let projectsBtn = document.getElementById('projects-btn');
   let aboutMeBtn = document.getElementById('about-me-btn');
+  let commentMeBtn = document.getElementById('comment-me-btn');
   let watchProjectsBtn = document.getElementById('watch-projects-btn');
   let scrollToTopBtn = document.getElementById('scroll-to-top-btn');
 
-  projectsBtn.addEventListener('click', (e) => scrollToProjects(e));  
-  aboutMeBtn.addEventListener('click', (e) => scrollToAboutMe(e));
+  projectsBtn.addEventListener('click', (e) => scrollToElement(e, 'projects'));  
+  aboutMeBtn.addEventListener('click', (e) => scrollToElement(e, 'about-me'));
+  commentMeBtn.addEventListener('click', (e) => scrollToElement(e, 'comments-area'));
   watchProjectsBtn.addEventListener('click', (e) => scrollToProjects(e));
   scrollToTopBtn.addEventListener('click', () => scrollTo(0));
 
   window.onscroll = () => showScrollBtn();
   
-  let scrollToProjects = (e) => {
+  let scrollToElement = (e, id) => {
     e.preventDefault();
-    scrollTo($('#projects').offset().top);
+    scrollTo($('#'+id).offset().top);
   }
 
-  let scrollToAboutMe = (e) => {
-    e.preventDefault();
-    scrollTo($('#about-me').offset().top);
-  }
-  
   // When the user scrolls down 700px from the top of the document, show the button
   let showScrollBtn = () => {
     if (document.body.scrollTop > 900 || document.documentElement.scrollTop > 900) {

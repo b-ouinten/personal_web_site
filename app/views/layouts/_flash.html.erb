@@ -1,6 +1,8 @@
-<% flash.each do |type, msg| %>
-  <div class="alert alert-dismissible <%= flash_class(type) %>">
-    <button type="button" class="btn-close btn-sm" data-dismiss="alert"></button>
-    <%= msg%> 
-  </div>
-<% end %>
+<div id="flash">
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-dismissible <%= flash_class(type) %>">
+      <button type="button" class="btn-close btn-sm" data-dismiss="alert"></button>
+      <div style="font-size: 14px"><%= msg%></div>
+    </div>
+  <% end %>
+</div>

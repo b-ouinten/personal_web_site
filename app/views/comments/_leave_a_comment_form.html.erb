@@ -1,7 +1,8 @@
-<div class="mb-5">
-  <%= form_for @comment do |f| %>
+<div id="comment-form" class="mb-5">
+  <%= render 'layouts/flash' %>
+  <%= form_for Comment.new, remote: true do |f| %>
     <div class="form-group mb-3">
-      <%= f.label :comment_category_id, 'What do you think?', class: 'form-label' %>
+      <%= f.label :comment_category_id, 'Your opinion!', class: 'form-label' %>
       <%= f.collection_select :comment_category_id, @comment_categories, :id, :title, {prompt: true}, {class: 'form-control form-control-sm px-2'} %>
     </div>
     <div class="mb-3">

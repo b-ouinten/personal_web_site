@@ -28,22 +28,22 @@ ApplicationRecord.descendants.each { |model|
 }
 
 # Create tags
-ruby = Tag.create(title: 'Ruby', order: 1, strength: 5)
-rails = Tag.create(title: 'Ruby on Rails', order: 2, strength: 5)
-javascript = Tag.create(title: 'JavaScript', order: 3, strength: 5)
-react = Tag.create(title: 'React', order: 4, strength: 4)
-html = Tag.create(title: 'HTML', order: 5, strength: 6)
-css = Tag.create(title: 'CSS', order: 6, strength: 5)
-bootstrap = Tag.create(title: 'Bootstrap', order: 7, strength: 6)
-pgsql = Tag.create(title: 'PostgreSQL', order: 8, strength: 5)
-git = Tag.create(title: 'git', order: 9, strength: 5)
+ruby = Tag.create(title: 'Ruby', order: 1, strength: 7)
+rails = Tag.create(title: 'Ruby on Rails', order: 2, strength: 7)
+javascript = Tag.create(title: 'JavaScript', order: 3, strength: 7)
+react = Tag.create(title: 'React', order: 4, strength: 6)
+html = Tag.create(title: 'HTML', order: 5, strength: 7)
+css = Tag.create(title: 'CSS', order: 6, strength: 6)
+bootstrap = Tag.create(title: 'Bootstrap', order: 7, strength: 7)
+pgsql = Tag.create(title: 'PostgreSQL', order: 8, strength: 7)
+git = Tag.create(title: 'git', order: 9, strength: 7)
 puts 'Tags created!'
 
 # Create projects
 agora = create_prject(
   'Agora',
   'This citizen discussion platform aims to give French citizens the means to propose and discuss local citizen ideas and to get involved in the improvement of their cities.',
-  5, 
+  7, 
   23,
   4,
   'Full-Stack developer.',
@@ -54,7 +54,7 @@ agora = create_prject(
 le_moulin = create_prject(
   'Le Moulin',
   'The objective of this Click and Collect type platform was to allow small traders to make themselves known and citizens to easily find their needs while encouraging local commerce.',
-  5,
+  7,
   18,
   3,
   'Full-Stack developer.',
@@ -65,7 +65,7 @@ le_moulin = create_prject(
 ze_kitten_project = create_prject(
   'Ze Kitten Project', 
   'This website offers pictures of kittens for sale.',
-  4,
+  6,
   21,
   4,
   'Full-Stack developer.',
@@ -76,7 +76,7 @@ ze_kitten_project = create_prject(
 dwarfurler = create_prject(
   'dwarfURLer',
   'This website provides a URL shortener that can create a DwarfURL from a giant URL, so you can share cute URLs with the rest of the world instead of URLs that go a mile!',
-  3, 
+  6, 
   7,
   0,
   'Full-Stack developer.',
@@ -87,7 +87,7 @@ dwarfurler = create_prject(
 french_embassies = create_prject(
   'French embassies',
   'This website provides a french embassies directory.',
-  3, 
+  6, 
   4,
   0,
   'Full-Stack developer.',
@@ -98,7 +98,7 @@ french_embassies = create_prject(
 ai_morpion = create_prject(
   'Morpion with AI',
   'This is a morpion AI-based. The AI was implemented using the concept of trees in algorithms.',
-  5, 
+  7, 
   4,
   0,
   'JavaScript developer.',
