@@ -8,7 +8,7 @@ $(document).ready(() => {
   projectsBtn.addEventListener('click', (e) => scrollToElement(e, 'projects'));  
   aboutMeBtn.addEventListener('click', (e) => scrollToElement(e, 'about-me'));
   commentMeBtn.addEventListener('click', (e) => scrollToElement(e, 'comments-area'));
-  watchProjectsBtn.addEventListener('click', (e) => scrollToProjects(e));
+  watchProjectsBtn.addEventListener('click', (e) => scrollToElement(e, 'projects'));
   scrollToTopBtn.addEventListener('click', () => scrollTo(0));
 
   window.onscroll = () => showScrollBtn();
