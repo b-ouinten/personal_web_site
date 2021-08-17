@@ -30,13 +30,13 @@ ApplicationRecord.descendants.each { |model|
 # Create tags
 ruby = Tag.create(title: 'Ruby', order: 1, strength: 7)
 rails = Tag.create(title: 'Ruby on Rails', order: 2, strength: 7)
-javascript = Tag.create(title: 'JavaScript', order: 3, strength: 7)
+javascript = Tag.create(title: 'JavaScript', order: 3, strength: 6)
 react = Tag.create(title: 'React', order: 4, strength: 6)
-html = Tag.create(title: 'HTML', order: 5, strength: 7)
+html = Tag.create(title: 'HTML', order: 5, strength: 6)
 css = Tag.create(title: 'CSS', order: 6, strength: 6)
-bootstrap = Tag.create(title: 'Bootstrap', order: 7, strength: 7)
-pgsql = Tag.create(title: 'PostgreSQL', order: 8, strength: 7)
-git = Tag.create(title: 'git', order: 9, strength: 7)
+bootstrap = Tag.create(title: 'Bootstrap', order: 7, strength: 6)
+pgsql = Tag.create(title: 'PostgreSQL', order: 8, strength: 6)
+git = Tag.create(title: 'git', order: 9, strength: 6)
 puts 'Tags created!'
 
 # Create projects
